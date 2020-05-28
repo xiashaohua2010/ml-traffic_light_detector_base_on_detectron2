@@ -48,8 +48,8 @@ from detectron2.structures import BoxMode
 import itertools
 #from tl_dataset import parse_label_file
 
-#dataset_path = "/local/mnt/workspace/sxia/dataset/bosch_traffic/rgb/"
-dataset_path = "/local/mnt/workspace/sxia/dataset/bosch-traffic/"
+#dataset_path = "/local/mnt/workspace/myname/dataset/bosch_traffic/rgb/"
+dataset_path = "/local/mnt/workspace/myname/dataset/bosch-traffic/"
 
 def get_tl_dicts(data_dir):
     dataset_dicts = []
@@ -131,7 +131,7 @@ def get_tl_dicts(data_dir):
     #3 cell3
     from detectron2.data import DatasetCatalog, MetadataCatalog
 for d in ["train", "test"]:
-    DatasetCatalog.register("/local/mnt/workspace/sxia/dataset/bosch-traffic/rgb/" + d, lambda d=d: get_tl_dicts("/local/mnt/workspace/sxia/dataset/bosch-traffic/rgb/" + d))
+    DatasetCatalog.register("/local/mnt/workspace/myname/dataset/bosch-traffic/rgb/" + d, lambda d=d: get_tl_dicts("/local/mnt/workspace/myname/dataset/bosch-traffic/rgb/" + d))
     MetadataCatalog.get(dataset_path + d).set(thing_classes=["traffic_light"])
 tl_metadata = MetadataCatalog.get(dataset_path+'train')
 
